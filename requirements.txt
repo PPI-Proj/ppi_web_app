@@ -1,0 +1,4 @@
+!pip install tensorflow
+!pip install keras
+!pip install BioPython
+!pip install pandas
