@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protein Interaction Predictor</title>
+</head>
+<body>
+    <h1>Protein Interaction Predictor</h1>
+    <form method="post" action="/">
+        <label for="protein1">Protein 1 Sequence:</label>
+        <input type="text" name="protein1" required>
+        <br>
+        <label for="protein2">Protein 2 Sequence:</label>
+        <input type="text" name="protein2" required>
+        <br>
+        <input type="submit" value="Predict Interaction Score">
+    </form>
+    {% if interaction_score is not none %}
+        <p>Interaction Score: {{ interaction_score }}</p>
+    {% endif %}
+</body>
+</html>
