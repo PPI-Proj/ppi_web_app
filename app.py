@@ -12,7 +12,7 @@ from id_seq import get_seq, get_word_token, tokenization, pad
 # for simplicity. the datasets should have the following columns:
 # 'id1', 'id2', 'label'
 def prepare_datasets():
-    true_dataset = pd.read_csv('cd5050.csv')
+    true_dataset = pd.read_csv('final_dataset.csv')
     graph_dataset = pd.read_csv('graph_dataset.csv')
     return true_dataset, graph_dataset
 
@@ -100,7 +100,7 @@ def file_input(uploaded_file):
             graph_predictions.append(y_pred_graph)
 
     data = list(zip(true_predictions, model_predictions[0], graph_predictions))
-    df = pd.DataFrame(data, columns=['y_true', 'y_pred_model_0', 'y_pred_graph'])
+    df = pd.DataFrame(data, columns=['y_true', 'y_pred_sequence', 'y_pred_graph'])
     st.write(df)
     csv_file_path = 'file_to_download.csv'
 
